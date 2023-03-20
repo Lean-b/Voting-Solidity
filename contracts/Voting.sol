@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.18;
+// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+pragma solidity 0.8.18;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 
@@ -22,7 +22,9 @@ contract Voting {
 
     function getVotedReceived(bytes32 candidate) view public returns (uint) {
         require(validCandidate(candidate));
-        return VotedReceived[candidate].current();
+        return VotedReceived[candidate].
+current
+();
     }
 
     function validCandidate(bytes32 candidate) public view returns (bool){

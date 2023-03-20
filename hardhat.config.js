@@ -1,6 +1,4 @@
-//require("@nomicfoundation/hardhat-toolbox");
 require("@nomiclabs/hardhat-waffle");
-require("");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   defaultNetwork: "localhost",
@@ -8,9 +6,12 @@ module.exports = {
     localhost: {
       url: "http://localhost:8545",
       accounts: {
-        mnemonic: process.env.MNEMONIC
+        mnemonic:  "test smart ",
       },
     },
+  },
+  contracts: {
+    voting: "contracts/Voting.sol"
   },
   solidity: {
     version: "0.8.18",
