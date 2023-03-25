@@ -5,16 +5,18 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract Voting {
     
-    using Counters for Counters.Counter;
-    
+       using Counters for Counters.Counter;
+
     mapping (bytes32 => Counters.Counter) public VotedReceived;
 
-    bytes32[]public candidateList;
+    bytes32[] public candidateList;
 
-    constructor(bytes32[]  memory candidateNames) {
-        candidateList = candidateNames;
+    constructor() {
+        candidateList.push(bytes32("Alicia"));
+        candidateList.push(bytes32("Leandro"));
+        candidateList.push(bytes32("Juan"));
     }
-
+    
     function incrementVoted(bytes32 candidate) public{
         require(validCandidate(candidate));
         VotedReceived[candidate].increment();
